@@ -1,0 +1,165 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #121212;
+  color: #f0e6d2;
+  line-height: 1.7;
+  scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+  background: linear-gradient(to right, #2b1d0e, #4a3218);
+  text-align: center;
+  padding: 2.5rem 1rem;
+  font-family: 'Georgia', serif;
+  border-bottom: 2px solid #d4af37;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: #f6e9c4;
+  letter-spacing: 1px;
+}
+
+header p {
+  font-size: 1.25rem;
+  color: #e0dcb5;
+  font-style: italic;
+}
+
+/* Gallery Section */
+.gallery {
+  column-count: 1;
+  column-gap: 1.5rem;
+  padding: 2.5rem 1rem;
+}
+
+.gallery h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #f6e9c4;
+}
+
+.gallery-intro p {
+  font-style: italic;
+  color: #e0dcb5;
+  margin-bottom: 2rem;
+  max-width: 700px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* Responsive Columns */
+@media (min-width: 600px) {
+  .gallery {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 900px) {
+  .gallery {
+    column-count: 3;
+  }
+}
+
+/* Art Card Styling */
+.art-card {
+  break-inside: avoid;
+  margin-bottom: 2rem;
+  background: #1a1a1a;
+  border: 3px solid transparent;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(212, 175, 55, 0.25);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border 0.4s ease;
+  padding: 0.75rem;
+  animation: fadeIn 0.8s ease forwards;
+  opacity: 0;
+  background-clip: padding-box;
+  position: relative;
+}
+
+/* Gradient Border Overlay */
+.art-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  padding: 3px;
+  background: linear-gradient(135deg, #d4af37, #ffd700, #f6e9c4);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Image Styling */
+.art-card img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 14px;
+  border: 2px solid #f6e9c4;
+  background-color: #1f1f1f;
+  transition: transform 0.4s ease;
+}
+
+/* Aspect Ratios */
+.art-card.portrait img {
+  aspect-ratio: 4 / 5;
+}
+
+.art-card.landscape img {
+  aspect-ratio: 4 / 3;
+}
+
+/* Hover Effects */
+.art-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(255, 215, 0, 0.4);
+}
+
+.art-card:hover img {
+  transform: scale(1.03);
+}
+
+/* Footer */
+footer {
+  background: #1a1a1a;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 1rem;
+  color: #cfcfcf;
+  border-top: 1px solid #444;
+  font-style: italic;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.caption {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  background: rgba(18, 18, 18, 0.85);
+  color: #ffd700;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-style: italic;
+  opacity: 1;
+  
+}
