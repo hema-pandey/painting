@@ -27,6 +27,7 @@ header h1 {
   margin-bottom: 0.5rem;
   color: #f6e9c4;
   letter-spacing: 1px;
+  text-shadow: 0 0 12px #ffd700, 0 0 24px #d4af37;
 }
 
 header p {
@@ -37,8 +38,6 @@ header p {
 
 /* Gallery Section */
 .gallery {
-  column-count: 1;
-  column-gap: 1.5rem;
   padding: 2.5rem 1rem;
 }
 
@@ -56,6 +55,7 @@ header p {
   font-size: 1.1rem;
   line-height: 1.8;
 }
+
 
 /* Responsive Columns */
 @media (min-width: 600px) {
@@ -163,3 +163,9 @@ footer {
   opacity: 1;
   
 }
+
+
+
+
+
+
